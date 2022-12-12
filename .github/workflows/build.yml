@@ -36,7 +36,7 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-    - uses: actions-hub/kubectl@1.14.3
+    - uses: actions-hub/kubectl@1.24.1
       env:
          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
       with:
