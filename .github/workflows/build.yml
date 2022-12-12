@@ -38,6 +38,9 @@ jobs:
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
     - uses: actions-hub/kubectl@v1.17.9
       env:
-         KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
+          KUBE_HOST: ${{ secrets.KUBE_HOST }}
+          KUBE_CERTIFICATE: ${{ secrets.KUBE_CERTIFICATE }}
+          KUBE_TOKEN: ${{ secrets.KUBE_TOKEN }}
+#          KUBE_CONFIG: ${{ secrets.KUBE_CONFIG }}
       with:
         args: get pods
